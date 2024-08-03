@@ -140,17 +140,18 @@
             flex-direction: column;
             gap: 20px;
             width: 100%;
+            overflow-x: auto;
         }
 
         table {
             width: 100%;
-            max-width: 1400px;
             border-collapse: collapse;
             margin: 0 auto;
             background-color: rgba(27, 42, 51, 0.95);
             border-radius: 8px;
             overflow: hidden;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+            table-layout: fixed; /* Add table-layout: fixed for consistent column width */
         }
 
         th,
@@ -163,6 +164,7 @@
             text-shadow: 1px 1px 2px #000;
             color: #f7d794;
             /* Set default text color */
+            word-wrap: break-word; /* Break long words */
         }
 
         th {
@@ -187,13 +189,15 @@
             align-items: center;
             font-size: 1em;
             color: #ffffff;
-            margin-bottom: 0; /* No margin between list items */
+            margin-bottom: 0;
+            /* No margin between list items */
         }
 
         .icon {
             width: 24px;
             height: 24px;
-            margin-right: 10px; /* Space between icon and text */
+            margin-right: 10px;
+            /* Space between icon and text */
         }
 
         @media only screen and (max-width: 800px) {
@@ -276,9 +280,25 @@
             .open-sidebar .bar3 {
                 transform: rotate(45deg) translate(-5px, -6px);
             }
+
+            /* Adjust table styles for mobile */
+            .table-container {
+                overflow-x: auto; /* Allow horizontal scrolling for tables */
+            }
+
+            table {
+                display: block;
+                overflow-x: auto;
+                width: 100%;
+            }
+
+            th,
+            td {
+                padding: 12px;
+                font-size: 0.9em;
+            }
         }
     </style>
-    
 </head>
 
 <body>
@@ -299,7 +319,33 @@
     <div class="content" id="content-area">
         <h1>Age of Empires IV</h1>
         <h2 class="content-title">Bitte wählen Sie einen Guide aus dem Menü</h2>
-
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Strategie</th>
+                        <th>Beschreibung</th>
+                        <th>Vorteile</th>
+                        <th>Nachteile</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Ritter Rush</td>
+                        <td>Schneller Angriff mit Rittern im frühen Spiel.</td>
+                        <td>Hoher Druck auf Gegner.</td>
+                        <td>Risiko bei fehlender Wirtschaft.</td>
+                    </tr>
+                    <tr>
+                        <td>Booming</td>
+                        <td>Fokus auf Wirtschaft und schnelles Wachstum.</td>
+                        <td>Starke Wirtschaft.</td>
+                        <td>Verteidigungsanfällig in der Anfangsphase.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
 
     <script>
         // Toggle sidebar on menu icon click
