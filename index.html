@@ -44,6 +44,8 @@
             box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
             overflow-y: auto;
             position: fixed;
+            top: 0;
+            left: 0;
             z-index: 3;
             width: 300px;
             box-sizing: border-box;
@@ -108,7 +110,7 @@
         }
 
         .content {
-            margin-left: 300px;
+            margin-left: 300px; /* Ensure space for the sidebar */
             padding: 40px 20px;
             width: calc(100% - 300px);
             box-sizing: border-box;
@@ -116,13 +118,16 @@
             overflow-y: auto;
             z-index: 2;
             position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center; /* Center content horizontally */
         }
 
         h1 {
             text-align: center;
             color: #f7d794;
             font-size: 3em;
-            margin-bottom: 0;
+            margin: 20px 0; /* Added margin for spacing */
             text-shadow: 2px 2px 4px #000;
         }
 
@@ -140,8 +145,10 @@
             display: flex;
             flex-direction: column;
             gap: 20px;
-            width: 100%;
+            max-width: 1400px;
+            width: 100%; /* Make it responsive */
             overflow-x: auto;
+            margin: 0 auto; /* Center the table container */
         }
 
         table {
@@ -265,8 +272,12 @@
             th,
             td {
                 padding: 12px;
-                font-size: 0.9em;
+                font-size: 1em;
             }
+            h1 {
+            font-size: 2em;
+            margin-top: 0;
+        }
         }
 
         @media only screen and (max-width: 600px) {
@@ -274,7 +285,7 @@
             th,
             td {
                 padding: 10px;
-                font-size: 0.8em;
+                font-size: 0.9em;
             }
 
             h1 {
