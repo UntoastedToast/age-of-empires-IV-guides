@@ -46,18 +46,15 @@
             position: fixed;
             z-index: 2;
             width: 300px;
-            /* Updated width */
             box-sizing: border-box;
             transition: transform 0.3s ease-in-out;
         }
 
-        /* For mobile, hide the sidebar initially */
         @media only screen and (max-width: 800px) {
             .sidebar {
                 transform: translateX(-100%);
             }
 
-            /* Sidebar open style for mobile */
             .sidebar.open {
                 transform: translateX(0);
             }
@@ -73,10 +70,8 @@
             border-bottom: 5px solid #f7d794;
             padding-bottom: 10px;
             background-color: rgba(26, 38, 46, 0.9);
-            /* Same as table header */
             padding: 30px;
             font-weight: bold;
-            /* Make the text bold */
         }
 
         .sidebar ul {
@@ -84,9 +79,7 @@
             padding: 0;
             margin: 0;
             text-align: center;
-            /* Center the list items */
             background-color: rgba(27, 42, 51, 0.95);
-            /* Match the background of table rows */
             border-radius: 8px;
             padding: 10px;
         }
@@ -94,7 +87,6 @@
         .sidebar li {
             margin-bottom: 15px;
             text-align: center;
-            /* Ensure each list item is centered */
         }
 
         .sidebar a {
@@ -106,9 +98,7 @@
             border-radius: 4px;
             transition: background-color 0.3s;
             margin: 0 auto;
-            /* Center the links within the list item */
             width: fit-content;
-            /* Make the link's width fit its content */
         }
 
         .sidebar a:hover {
@@ -118,7 +108,6 @@
 
         .content {
             margin-left: 300px;
-            /* Updated margin to match sidebar width */
             padding: 40px 20px;
             width: calc(100% - 300px);
             box-sizing: border-box;
@@ -149,9 +138,7 @@
         .table-container {
             display: flex;
             flex-direction: column;
-            align-items: center;
             gap: 20px;
-            overflow-x: auto; /* Allow horizontal scrolling */
             width: 100%;
         }
 
@@ -170,11 +157,12 @@
         td {
             padding: 30px;
             text-align: left;
-            vertical-align: top;
+            vertical-align: middle;
             border-bottom: 2px solid #2A3C48;
             font-size: 1.2em;
             text-shadow: 1px 1px 2px #000;
             color: #f7d794;
+            /* Set default text color */
         }
 
         th {
@@ -195,24 +183,22 @@
         }
 
         li {
-            margin-bottom: 20px;
-            font-size: 1em;
             display: flex;
             align-items: center;
+            font-size: 1em;
             color: #ffffff;
+            margin-bottom: 0; /* No margin between list items */
         }
 
         .icon {
-            margin-right: 15px;
-            vertical-align: middle;
             width: 24px;
             height: 24px;
+            margin-right: 10px; /* Space between icon and text */
         }
 
         @media only screen and (max-width: 800px) {
             .sidebar {
                 width: 240px;
-                /* Adjusted for mobile devices */
             }
 
             .content {
@@ -242,15 +228,12 @@
         @media only screen and (max-width: 600px) {
             .sidebar {
                 width: 240px;
-                /* Keep the sidebar width consistent */
                 height: 100%;
                 transform: translateX(-100%);
-                /* Move sidebar off screen for mobile */
             }
 
             .sidebar.open {
                 transform: translateX(0);
-                /* Bring sidebar on screen for mobile */
             }
 
             .content {
@@ -283,7 +266,7 @@
             }
 
             .open-sidebar .bar1 {
-                transform: rotate(-45deg) translate(-9px, 6px);
+                transform: rotate(-45deg) translate(-5px, 6px);
             }
 
             .open-sidebar .bar2 {
@@ -291,10 +274,11 @@
             }
 
             .open-sidebar .bar3 {
-                transform: rotate(45deg) translate(-8px, -8px);
+                transform: rotate(45deg) translate(-5px, -6px);
             }
         }
     </style>
+    
 </head>
 
 <body>
@@ -316,40 +300,6 @@
         <h1>Age of Empires IV</h1>
         <h2 class="content-title">Bitte wählen Sie einen Guide aus dem Menü</h2>
 
-        <!-- Example table -->
-        <div class="table-container">
-            <table>
-                <thead>
-                    <tr>
-                        <th>Einheit</th>
-                        <th>Kosten</th>
-                        <th>Stärke</th>
-                        <th>Schwäche</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Lanze</td>
-                        <td>100 Holz</td>
-                        <td>Infanterie</td>
-                        <td>Reiter</td>
-                    </tr>
-                    <tr>
-                        <td>Schwertkämpfer</td>
-                        <td>150 Gold</td>
-                        <td>Infanterie</td>
-                        <td>Bogenschützen</td>
-                    </tr>
-                    <tr>
-                        <td>Reiter</td>
-                        <td>200 Nahrung</td>
-                        <td>Bogenschützen</td>
-                        <td>Lanze</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-    </div>
 
     <script>
         // Toggle sidebar on menu icon click
