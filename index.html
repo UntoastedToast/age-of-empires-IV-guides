@@ -44,13 +44,14 @@
             box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
             overflow-y: auto;
             position: fixed;
-            z-index: 2;
+            z-index: 3;
             width: 300px;
             box-sizing: border-box;
             transition: transform 0.3s ease-in-out;
         }
 
-        @media only screen and (max-width: 800px) {
+        /* Adjust sidebar behavior for larger screens */
+        @media only screen and (max-width: 1200px) {
             .sidebar {
                 transform: translateX(-100%);
             }
@@ -151,7 +152,8 @@
             border-radius: 8px;
             overflow: hidden;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
-            table-layout: fixed; /* Add table-layout: fixed for consistent column width */
+            table-layout: fixed;
+            /* Add table-layout: fixed for consistent column width */
         }
 
         th,
@@ -164,7 +166,8 @@
             text-shadow: 1px 1px 2px #000;
             color: #f7d794;
             /* Set default text color */
-            word-wrap: break-word; /* Break long words */
+            word-wrap: break-word;
+            /* Break long words */
         }
 
         th {
@@ -200,39 +203,9 @@
             /* Space between icon and text */
         }
 
-        @media only screen and (max-width: 800px) {
+        @media only screen and (max-width: 1200px) {
             .sidebar {
                 width: 240px;
-            }
-
-            .content {
-                margin-left: 0;
-                width: 100%;
-            }
-
-            th,
-            td {
-                padding: 15px;
-                font-size: 1em;
-            }
-
-            h1 {
-                font-size: 2.5em;
-            }
-
-            h2 {
-                font-size: 1.2em;
-            }
-
-            table {
-                width: 95%;
-            }
-        }
-
-        @media only screen and (max-width: 600px) {
-            .sidebar {
-                width: 240px;
-                height: 100%;
                 transform: translateX(-100%);
             }
 
@@ -244,10 +217,6 @@
                 margin-left: 0;
                 width: 100%;
                 padding-top: 60px;
-            }
-
-            #menu-toggle {
-                display: none;
             }
 
             .menu-icon {
@@ -281,9 +250,10 @@
                 transform: rotate(45deg) translate(-5px, -6px);
             }
 
-            /* Adjust table styles for mobile */
+            /* Adjust table styles for smaller screens */
             .table-container {
-                overflow-x: auto; /* Allow horizontal scrolling for tables */
+                overflow-x: auto;
+                /* Allow horizontal scrolling for tables */
             }
 
             table {
@@ -296,6 +266,27 @@
             td {
                 padding: 12px;
                 font-size: 0.9em;
+            }
+        }
+
+        @media only screen and (max-width: 600px) {
+            /* Further adjustments for very small screens */
+            th,
+            td {
+                padding: 10px;
+                font-size: 0.8em;
+            }
+
+            h1 {
+                font-size: 2em;
+            }
+
+            h2 {
+                font-size: 1em;
+            }
+
+            .content {
+                padding-top: 50px;
             }
         }
     </style>
@@ -315,36 +306,6 @@
         <ul id="guide-list">
             <!-- JavaScript will dynamically populate this list -->
         </ul>
-    </div>
-    <div class="content" id="content-area">
-        <h1>Age of Empires IV</h1>
-        <h2 class="content-title">Bitte wählen Sie einen Guide aus dem Menü</h2>
-        <div class="table-container">
-            <table>
-                <thead>
-                    <tr>
-                        <th>Strategie</th>
-                        <th>Beschreibung</th>
-                        <th>Vorteile</th>
-                        <th>Nachteile</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Ritter Rush</td>
-                        <td>Schneller Angriff mit Rittern im frühen Spiel.</td>
-                        <td>Hoher Druck auf Gegner.</td>
-                        <td>Risiko bei fehlender Wirtschaft.</td>
-                    </tr>
-                    <tr>
-                        <td>Booming</td>
-                        <td>Fokus auf Wirtschaft und schnelles Wachstum.</td>
-                        <td>Starke Wirtschaft.</td>
-                        <td>Verteidigungsanfällig in der Anfangsphase.</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
     </div>
 
     <script>
